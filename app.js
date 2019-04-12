@@ -1,19 +1,25 @@
-//game choices
+//Funtion that encompasses the entire game
+const game = () => {
 
-choices = ['rock', 'paper', 'scissors']
-//computer choice
-//randomize the computer choices, 3 choices in total
-random = Math.floor(Math.random() * 3)
-//assign the random numbers to the index in the array
-compChoice = choices[random]
-console.log(random, compChoice)
+//score 
+let pScore = 0;
+let cScore = 0;
 
-//show the comp choice, on refresh show the rand choice
-function DidChoose(){
-    let compAnswer = document.getElementById('#compAnswer').innerHTML = compChoice
+//start game
+const startGame = () => {
+    const playButton = document.querySelector('.intro button');
+    const introScreen = document.querySelector('.intro');
+    const match = document.querySelector('.match');
+
+    playButton.addEventListener('click', ()=> {
+        introScreen.classList.add('fadeOut');
+    });
+};
+
+//call all the inner function
+startGame();
+
 }
 
-//user choices
-
-//compare the choices
-
+//start the game
+game();
