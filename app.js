@@ -35,29 +35,30 @@ const game = () => {
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber]
                 
-
-                //This is where we call compare hands
+                //this is where we call compare hands
+                compareHands(this.textContent, computerChoice);
             });
         });
     }
     
     //create a function that compares the hands between the comp and the player
     const compareHands = (playerChoice, computerChoice) => {
+       
         const winner = document.querySelector('.winner');
         
         //checking for a tie
-        if(playerChoice == computerChoice){
-            winner.textContent = 'It is a tie!';
+        if(playerChoice === computerChoice){
+            winner.textContent = 'Tie!';
             return;
         } 
         //check for Rock
         if(playerChoice == 'rock'){
 
             if(computerChoice == 'scissors'){
-                winner.textContent = "Player wins";
+                winner.textContent = "Player Wins";
                 return;
             } else {
-                winner.textContent = "Computer wins";
+                winner.textContent = "Computer Wins";
                 return;
             }
         }
@@ -65,10 +66,10 @@ const game = () => {
         if(playerChoice == 'paper'){
 
             if(computerChoice == 'scissors'){
-                winner.textContent = "Computer wins";
+                winner.textContent = "Computer Wins";
                 return;
             } else {
-                winner.textContent = "Player wins";
+                winner.textContent = "Player Wins";
                 return;
             }
         }
@@ -76,10 +77,10 @@ const game = () => {
         if(playerChoice == 'scissors'){
 
             if(computerChoice == 'rock'){
-                winner.textContent = "Computer wins";
+                winner.textContent = "Computer Wins";
                 return;
             } else {
-                winner.textContent = "Player wins";
+                winner.textContent = "Player Wins";
                 return;
             }
         }
@@ -89,6 +90,7 @@ const game = () => {
     //call all the inner function
     startGame();
     playMatch();
+    // compareHands();
 }
 
 //start the game
