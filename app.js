@@ -28,16 +28,41 @@ const game = () => {
         //computer options
         const computerOptions = ['rock', 'paper', 'scissors'];
 
-        //when the pButtons are clicked 
+        //when the player buttons are clicked 
         options.forEach(option => {
             option.addEventListener('click', function () {
                 //generate a random number between 0-2
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber]
-                console.log(computerChoice)
+                
+
+                //This is where we call compare hands
             });
         });
     }
+    
+    //create a function that compares the hands between the comp and the player
+    const compareHands = (playerChoice, computerChoice) => {
+        const winner = document.querySelector('.winner');
+        
+        //checking for a tie
+        if(playerChoice == computerChoice){
+            winner.textContent = 'It is a tie!';
+            return;
+        } 
+        //check
+        if(playerChoice == 'rock'){
+            if(computerChoice == 'scissors'){
+                winner.textContent = "Player wins";
+                return;
+            } else {
+                winner.textContent = "Computer wins";
+                return;
+            }
+        }
+    }
+
+
     //call all the inner function
     startGame();
     playMatch();

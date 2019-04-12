@@ -9,3 +9,5 @@ ClassList
 How does the arrow function and the regular function relate to the keyword `this`?
 
 Code Organization
+
+innerHTML VS textContent
