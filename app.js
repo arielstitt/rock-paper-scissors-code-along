@@ -1,38 +1,46 @@
 //Funtion that encompasses the entire game
 const game = () => {
 
-//score 
-let pScore = 0;
-let cScore = 0;
+    //score 
+    let pScore = 0;
+    let cScore = 0;
 
-//start game
-const startGame = () => {
-    const playButton = document.querySelector('.intro button');
-    const introScreen = document.querySelector('.intro');
-    const match = document.querySelector('.match');
+    //start game
+    const startGame = () => {
+        const playButton = document.querySelector('.intro button');
+        const introScreen = document.querySelector('.intro');
+        const match = document.querySelector('.match');
 
-    playButton.addEventListener('click', ()=> {
-        introScreen.classList.add('fadeOut');
-        match.classList.add('fadeIn');
-    });
-};
+        playButton.addEventListener('click', () => {
+            introScreen.classList.add('fadeOut');
+            match.classList.add('fadeIn');
+        });
+    };
 
-//Play Match
+    //Play Match
 
-const playMatch = () => {
-    //options for rock paper scissors
-    const options = document.querySelectorAll('.options button');
-    const playerHand = document.querySelector('.player-hand');
-    const computerHand = document.querySelector('.computer-hand');
-    //computer options
-    const computerOptions = ['rock', 'paper', 'scissors'];
-    //generate a random number between 0-2
-    
-    
-}
-//call all the inner function
-startGame();
+    const playMatch = () => {
+        //options for rock paper scissors
+        const options = document.querySelectorAll('.options button');
+        const playerHand = document.querySelector('.player-hand');
+        const computerHand = document.querySelector('.computer-hand');
 
+        //computer options
+        const computerOptions = ['rock', 'paper', 'scissors'];
+
+        //when the pButtons are clicked 
+        options.forEach(option => {
+            option.addEventListener('click', function () {
+                //generate a random number between 0-2
+                const computerNumber = Math.floor(Math.random() * 3);
+                const computerChoice = computerOptions[computerNumber]
+                console.log(computerChoice)
+            });
+        });
+    }
+    //call all the inner function
+    startGame();
+    playMatch();
 }
 
 //start the game
